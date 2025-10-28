@@ -1,4 +1,4 @@
-name: Deploy Conti Memo
+name: Deploy Memo
 
 on:
   push:
