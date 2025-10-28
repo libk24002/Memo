@@ -439,9 +439,12 @@ loadvm snapshot1      # 加载快照
 
 ## 📝 相关文档
 
-- [在 CentOS 8 上创建虚拟机](create.centos.8.with.qemu.md) *(待完善)*
-- [在 Linux 上安装 QEMU](install.with.linux.md) *(待完善)*
-- [在 macOS 上安装 QEMU](install.with.mac.md) *(待完善)*
+!!! note "计划中的文档"
+    以下文档正在编写中，敬请期待：
+    
+    - 在 CentOS 8 上创建虚拟机
+    - 在 Linux 上安装 QEMU
+    - 在 macOS 上安装 QEMU
 
 ---
 
