@@ -1,1 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 ## Kubernetes
+
+
