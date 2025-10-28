@@ -1,9 +1,0 @@
-* [commands](/essential/commands/linux/README.md)
-* Storage
-    + [LVM](basic/lvm/README.md)
-* Network
-    + [LoadBalance](basic/load_balance.md)
-    + [Network](network/README.md)
-* [Mirrors](other/mirrors/README.md)
-* [zjvis-node](other/zjvis-node.md)
-* [linux-memo](other/linux-memo.md)

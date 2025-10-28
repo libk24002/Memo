@@ -1,23 +1,143 @@
 site_name: Conti Memo
-site_description: Conti Memo
+site_description: 个人技术文档和学习笔记集合
 site_url: https://memo.cnconti.tech
 site_author: Libk24002
 
 repo_url: https://github.com/libk24002/Memo
+repo_name: libk24002/Memo
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2024 Libk24002
 
 theme:
   name: material
-  favicon: favicon.png
+  language: zh
+  favicon: favicon.ico
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+  palette:
+    # 亮色模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换至深色模式
+    # 深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换至浅色模式
   features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
     - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.prune
+    - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.tracking
-    - navigation.prune
     - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
     - toc.follow
-    - toc.integrate
-  plugins:
-    - search
-    - blog
+
+plugins:
+  - search:
+      separator: '[\s\u200b\-]'
+      lang:
+        - zh
+        - en
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: libk24002
+      repo: Memo
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/libk24002
+  generator: false
+
+# 导航结构
+nav:
+  - 主页: index.md
+  - 快速开始: quickstart.md
+  - Linux:
+      - linux/README.md
+      - 网络:
+          - 网络基础: linux/network/README.md
+      - 存储:
+          - LVM 基础: linux/storage/lvm/README.md
+          - LVM 高级: linux/storage/lvm.md
+      - 虚拟化:
+          - QEMU/KVM: linux/virtual-machine/qemu/README.md
+      - 其他:
+          - Kerberos 认证: linux/other/kerberos.md
+          - 镜像源配置: linux/other/mirrors.md
+          - ZJVIS 节点: linux/other/zjvis-node.md
+  - Git: git/README.md
+  - Docker: docker/README.md
+  - 常用命令: commands/README.md
+  - 理论知识:
+      - 计算机基础: theories/computer/README.md
+      - 数学理论: theories/mathematical/README.md
+      - 算法: theories/algorithm/README.md
+      - 架构设计: theories/architectural-design/README.md
+      - 存储技术: theories/storage/README.md
+  - 关于: about.md
