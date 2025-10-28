@@ -4,6 +4,6 @@
 * Network
     + [LoadBalance](basic/load_balance.md)
     + [Network](network/README.md)
-* [Mirrors](mirrors/README.md)
+* [Mirrors](other/mirrors/README.md)
 * [zjvis-node](other/zjvis-node.md)
 * [linux-memo](other/linux-memo.md)

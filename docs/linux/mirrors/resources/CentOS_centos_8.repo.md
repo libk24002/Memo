@@ -1,1 +1,0 @@
-[CentOS mirror](CentOS_centos_8.repo ':include')

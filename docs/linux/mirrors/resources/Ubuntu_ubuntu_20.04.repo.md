@@ -1,1 +1,0 @@
-[Ubuntu mirror](Ubuntu_ubuntu_20.04.repo ':include')

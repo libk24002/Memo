@@ -1,1 +1,0 @@
-[Ubuntu mirror](Ubuntu_ubuntu_18.04.repo ':include')

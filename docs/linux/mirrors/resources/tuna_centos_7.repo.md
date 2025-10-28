@@ -1,1 +1,0 @@
-[tuna mirror](tuna_centos_7.repo ':include')

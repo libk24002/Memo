@@ -1,5 +1,5 @@
 ## 基础工具 (Essential)
-- [Linux](essential/linux/README.md) - Linux 系统相关
+- [Linux](linux/README.md) - Linux 系统相关
 - [Git](essential/git/README.md) - Git 版本控制
 - [Docker](essential/docker/README.md) - Docker 容器技术
 - [Commands](essential/commands/README.md) - 常用命令集合
