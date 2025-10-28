@@ -1,0 +1,7 @@
+site_name: Memo
+site_description: Libk24002 Memo
+site_url: https://memo.cnconti.tech
+site_author: Libk24002
+
+theme:
+  name: material
