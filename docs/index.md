@@ -1,6 +1,4 @@
-# 一
-
-## 基础工具 (Essential)
+# 基础工具 (Essential)
 - [Linux](linux/README.md) - Linux 系统相关
 - [Git](git/README.md) - Git 版本控制
 - [Docker](docker/README.md) - Docker 容器技术
@@ -14,7 +12,7 @@
 - [Storage](theories/storage/README.md) - 存储技术
 - [Database](theories/database/README.md) - 数据库
 
-## 云原生 (Cloud Native)
+# 云原生 (Cloud Native)
 - [DevOps](cloud-native/devops/README.md) - DevOps 实践
 - [Kubernetes](cloud-native/kubernetes/README.md) - Kubernetes 容器编排
 
@@ -27,5 +25,5 @@
 ### 四
 * pass
 
-##### 五
+#### 五
 * pass
