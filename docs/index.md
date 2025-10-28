@@ -1,17 +1,20 @@
-# Welcome to Libk24002 Memo
+## 基础工具 (Essential)
+- [Linux](essential/linux/README.md) - Linux 系统相关
+- [Git](essential/git/README.md) - Git 版本控制
+- [Docker](essential/docker/README.md) - Docker 容器技术
+- [Commands](essential/commands/README.md) - 常用命令集合
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## 理论知识 (Theories)
+- [Computer](theories/computer/README.md) - 计算机基础
+- [Mathematical](theories/mathematical/README.md) - 数学理论
+- [Algorithm](theories/algorithm/README.md) - 算法
+- [Architecture](theories/architectural-design/README.md) - 架构设计
+- [Storage](theories/storage/README.md) - 存储技术
+- [Database](theories/database/README.md) - 数据库
 
-## Commands
+## 云原生 (Cloud Native)
+- [DevOps](cloud-native/devops/README.md) - DevOps 实践
+- [Kubernetes](cloud-native/kubernetes/README.md) - Kubernetes 容器编排
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## 相关项目
+- [Stick](https://github.com/libk24002/stick.git) - 其他项目
