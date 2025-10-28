@@ -95,60 +95,12 @@
 - [LVM 存储管理](linux/storage/lvm/README.md) - Linux 逻辑卷管理器
 - [QEMU/KVM 虚拟化](linux/virtual-machine/qemu/README.md) - 虚拟化技术入门
 
-## 🚀 快速开始
-
-想要在本地运行这个文档站点或参与贡献？
-
-<div class="grid cards" markdown>
-
--   :material-rocket-launch: __快速开始指南__
-
-    ---
-
-    详细的本地搭建和开发指南
-
-    [:octicons-arrow-right-24: 查看指南](quickstart.md)
-
--   :material-file-document-edit: __贡献指南__
-
-    ---
-
-    了解如何为本项目做出贡献
-
-    [:octicons-arrow-right-24: 参与贡献](https://github.com/libk24002/Memo/blob/main/CONTRIBUTING.md)
-
-</div>
-
-简单三步即可开始：
-
-```bash
-# 1. 克隆仓库
-git clone https://github.com/libk24002/Memo.git
-cd Memo
-
-# 2. 安装依赖
-pip install -r requirements.txt
-
-# 3. 启动开发服务器
-mkdocs serve
-```
-
-然后访问 `http://localhost:8000` 即可查看。
-
 ## 📖 关于本站
 
 本站使用 [MkDocs](https://www.mkdocs.org/) 和 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 主题构建，所有内容使用 Markdown 编写。
 
 - **GitHub 仓库**: [libk24002/Memo](https://github.com/libk24002/Memo)
 - **在线访问**: [memo.cnconti.tech](https://memo.cnconti.tech)
-
-## 📝 贡献
-
-欢迎通过以下方式参与贡献：
-
-- 提交 [Issue](https://github.com/libk24002/Memo/issues) 报告问题或建议
-- 提交 [Pull Request](https://github.com/libk24002/Memo/pulls) 改进内容
-- 分享给更多需要的人
 
 ---
 
