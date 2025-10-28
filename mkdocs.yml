@@ -3,5 +3,19 @@ site_description: Conti Memo
 site_url: https://memo.cnconti.tech
 site_author: Libk24002
 
+repo_url: https://github.com/libk24002/Memo
+
 theme:
   name: material
+  favicon: favicon.png
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.path
+    - navigation.prune
+    - navigation.top
+    - toc.follow
+  plugins:
+    - search
+    - blog
