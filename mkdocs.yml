@@ -9,10 +9,13 @@ theme:
   name: material
   favicon: favicon.png
   features:
+    - header.autohide
     - navigation.instant
     - navigation.instant.progress
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
     - navigation.tracking
-    - navigation.path
     - navigation.prune
     - navigation.top
     - toc.follow
