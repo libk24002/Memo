@@ -139,4 +139,3 @@ nav:
       - 算法: theories/algorithm/README.md
       - 架构设计: theories/architectural-design/README.md
       - 存储技术: theories/storage/README.md
-  - 关于: about.md
