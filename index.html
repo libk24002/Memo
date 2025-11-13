@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Conti-Memo</title>
+  <title>Conti Memo</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -12,11 +12,25 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: 'Conti-Memo',
+      name: 'Memo',
       repo: 'https://github.com/libk24002/Memo.git',
-      themeColor: '#458C67',
+      themeColor: '#02786A',
+      auto2top: true,
+      nativeEmoji: true,
+      relativePath: true,
+      subMaxLevel: 3,
+      tabs: {
+        persist: true,
+        tabComments: true,
+        tabHeadings: true
+      },
     }
   </script>
   <script src="offline-docsify/docsify.js"></script>
+  <script src="offline-docsify/docsify-copy-code.min.js"></script>
+  <script src="offline-docsify/docsify-count.min.js"></script>
+  <script src="offline-docsify/docsify-tabs.min.js"></script>
+  <script src="offline-docsify/docsify-themeable.min.js"></script>
+  <script src="offline-docsify/docsify-breadcrumb.min.js"></script>
 </body>
 </html>
