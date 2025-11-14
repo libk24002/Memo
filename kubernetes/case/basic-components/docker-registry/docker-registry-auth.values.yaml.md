@@ -1,0 +1,1 @@
+[docker-registry-auth.values.yaml](docker-registry-auth.values.yaml ':include')

@@ -1,0 +1,4 @@
+primary:
+  persistence:
+    storageClass: nfs-external-nas
+    size: 1024Mi

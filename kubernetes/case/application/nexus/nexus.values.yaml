@@ -1,0 +1,56 @@
+image:
+  repository: localhost:5000/docker.io/sonatype/nexus3
+  tag: 3.37.3
+  pullPolicy: IfNotPresent
+fullnameOverride: my-nexus
+nexus:
+  env:
+    - name: INSTALL4J_ADD_VM_PARAMS
+      value: "-Xms1200M -Xmx1200M -XX:MaxDirectMemorySize=2G -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
+    - name: NEXUS_SECURITY_RANDOMPASSWORD
+      value: "true"
+  properties:
+    override: false
+    data:
+      nexus.scripts.allowCreation: true
+  resources: {}
+  #   requests:
+  #    Based on https://support.sonatype.com/hc/en-us/articles/115006448847#mem
+  #    and https://twitter.com/analytically/status/894592422382063616:
+  #      Xms == Xmx
+  #      Xmx <= 4G
+  #      MaxDirectMemory >= 2G
+  #      Xmx + MaxDirectMemory <= RAM * 2/3 (hence the request for 4800Mi)
+  #      MaxRAMFraction=1 is not being set as it would allow the heap
+  #        to use all the available memory.
+  #     cpu: 250m
+  #     memory: 4800Mi
+  # The ports should only be changed if the nexus image uses a different port
+  nexusPort: 8081
+ingress:
+  enabled: true
+  ingressClassName: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: self-signed-cluster-issuer
+    nginx.ingress.kubernetes.io/proxy-body-size: 2g
+    nginx.org/client-max-body-size: 2g
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+  hostPath: /
+  hostRepo: nexus.local
+  tls:
+    - secretName: nexus.local-tls
+      hosts:
+        - nexus.local
+service:
+  name: nexus
+  enabled: true
+  type: ClusterIP
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  storageClass: standard
+  storageSize: 8Gi
+serviceAccount:
+  create: flase

@@ -10,3 +10,4 @@
   + _TODO_[Ubuntu 18.04](installationGuides/ubuntu/18.04/README.md)
   + _TODO_[Ubuntu 22.04](installationGuides/ubuntu/22.04/README.md)
   + _TODO_[Ubuntu 24.04](installationGuides/ubuntu/24.04/README.md)
+* _TODO_[ansiable](ansible/check-ssh-sudo.md)

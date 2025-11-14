@@ -1,0 +1,1 @@
+[docker-registry-tls.ingress.yaml](docker-registry-tls.ingress.yaml ':include')

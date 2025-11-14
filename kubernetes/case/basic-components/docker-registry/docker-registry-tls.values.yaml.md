@@ -1,0 +1,1 @@
+[docker-registry-tls.values.yaml](docker-registry-tls.values.yaml ':include')

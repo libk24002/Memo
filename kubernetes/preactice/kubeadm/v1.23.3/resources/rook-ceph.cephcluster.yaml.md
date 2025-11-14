@@ -1,0 +1,1 @@
+[rook-ceph.cephcluster.yaml](rook-ceph.cephcluster.yaml ':include')

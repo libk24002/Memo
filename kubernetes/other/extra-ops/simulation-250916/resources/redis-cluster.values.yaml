@@ -1,0 +1,23 @@
+image:
+  registry: m.daocloud.io/docker.io
+  repository: bitnami/redis-cluster
+  tag: 6.2.7-debian-11-r9
+  pullPolicy: IfNotPresent
+redis:
+  configmap: |-
+    maxmemory-policy allkeys-lru
+    maxmemory 50GB
+  resources:
+    limits:
+      cpu: 4
+      memory: 50Gi
+    requests:
+      cpu: 200m
+      memory: 512Mi
+cluster:
+  nodes: 6
+existingSecret: "redis-cluster-credentials"
+existingSecretPasswordKey: "password"
+persistence:
+  storageClass: "nfs-external-nas"
+  size: 50Gi

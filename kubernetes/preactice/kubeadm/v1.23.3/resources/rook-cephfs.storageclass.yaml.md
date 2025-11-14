@@ -1,0 +1,1 @@
+[rook-cephfs.storageclass.yaml](rook-cephfs.storageclass.yaml ':include')

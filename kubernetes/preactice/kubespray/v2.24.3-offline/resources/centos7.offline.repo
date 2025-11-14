@@ -1,0 +1,17 @@
+[base]
+name=CentOS-7 Base
+baseurl=file:///data/base
+enabled=1
+gpgcheck=0
+
+[extras]
+name=CentOS-7 Extras
+baseurl=file:///data/updates
+enabled=1
+gpgcheck=0
+
+[docker-ce]
+name=CentOS-7 Docker CE
+baseurl=file:///data/docker-ce
+enabled=1
+gpgcheck=0

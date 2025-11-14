@@ -1,0 +1,27 @@
+image:
+  repository: localhost:5000/docker.io/registry
+  tag: 2.7.1
+ingress:
+  enabled: false
+persistence:
+  enabled: true
+  size: 100Gi
+  storageClass: standard
+extraEnvVars:
+  - name: REGISTRY_AUTH
+    value: "htpasswd"
+  - name: REGISTRY_AUTH_HTPASSWD_REALM
+    value: "Registry Realm"
+  - name: REGISTRY_AUTH_HTPASSWD_PATH
+    value: "/auth/htpasswd"
+extraVolumeMounts:
+  - name: auth
+    mountPath: /auth
+    readOnly: true
+extraVolumes:
+  - name: auth
+    secret:
+      secretName: docker-registry-secret
+      items:
+        - key: htpasswd
+          path: htpasswd

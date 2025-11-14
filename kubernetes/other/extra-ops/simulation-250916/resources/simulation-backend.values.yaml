@@ -1,0 +1,94 @@
+image:
+  repository: docker.io/cnconti/simulation-backend-springboot
+  tag: "v1.0.0"
+centos:
+  name: centos
+  repository: m.daocloud.io/docker.io/library/centos
+  tag: "centos8.4.2105"
+service:
+  type: ClusterIP
+  port: 8289
+  targetPort: 8289
+  socket:
+    io:
+      enabled: false
+      type: ClusterIP
+      port: 8289
+      targetPort: 8289
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+  hosts:
+    - host: simulation.zju.cnconti.tech
+      paths:
+        - path: /api/?(.*)
+          pathType: ImplementationSpecific
+  tls: []
+  socket:
+    io:
+      enabled: true
+      annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /$1
+        nginx.ingress.kubernetes.io/proxy-body-size: 5g
+        nginx.ingress.kubernetes.io/proxy-connect-timeout: "7200"
+        nginx.ingress.kubernetes.io/proxy-read-timeout: "7200"
+        nginx.ingress.kubernetes.io/proxy-send-timeout: "7200"
+        nginx.ingress.kubernetes.io/websocket-services: "app-sockets-cluster-ip-service"
+      hosts:
+        - host: simulation.zju.cnconti.tech
+          paths:
+            - path: /socket.io/?(.*)
+              pathType: ImplementationSpecific
+      tls: []
+livenessProbe:
+  failureThreshold: 3
+  httpGet:
+    path: /health/check/liveness
+    port: 8289
+    scheme: HTTP
+  periodSeconds: 10
+  initialDelaySeconds: 180
+  successThreshold: 1
+  timeoutSeconds: 1
+readinessProbe:
+  failureThreshold: 3
+  httpGet:
+    path: /health/check/readiness
+    port: 8289
+    scheme: HTTP
+  periodSeconds: 10
+  initialDelaySeconds: 180
+  successThreshold: 1
+  timeoutSeconds: 1
+# resources:
+#   limits:
+#     cpu: "48"
+#     memory: "48Gi"
+#   requests:
+#     cpu: "24"
+#     memory: "24Gi"
+application:
+  environment:
+    - name: JAVA_OPS
+      value: "-server -Xms1024m -Xmx8096m -XX:+UseG1GC -DJM.LOG.PATH=/app/logs -DJM.SNAPSHOT.PATH=/app"
+secret:
+  application: |-
+    nacos:
+      config:
+        bootstrap:
+          enable: true
+          log-enable: true
+        server-addr: nacos.application:8848
+        data-id: simulation-bootstrap.yaml
+        namespace: simulation-zju
+        group: DEFAULT_GROUP
+        type: yaml
+        auto-refresh: true
+        remote-first: true
+        username: readonly
+        password: "********"

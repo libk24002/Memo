@@ -1,0 +1,51 @@
+image:
+  repository: kubernetesui/dashboard
+  tag: "v2.7.0"
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+resources:
+  requests:
+    cpu: 2
+    memory: 2Gi
+  limits:
+    cpu: 4
+    memory: 4Gi
+
+service:
+  type: ClusterIP
+  externalPort: 443
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: alidns-webhook-letsencrypt
+  hosts:
+    - kubernetes-dashboard.local
+  tls:
+    - secretName: kubernetes-dashboard.local-tls
+      hosts:
+        - kubernetes-dashboard.local
+
+settings:
+  clusterName: "test"
+  itemsPerPage: 10
+  logsAutoRefreshTimeInterval: 10
+  resourceAutoRefreshTimeInterval: 10
+  disableAccessDeniedNotifications: true
+
+metricsScraper:
+  enabled: false
+  image:
+    repository: kubernetesui/metrics-scraper
+    tag: v1.0.9
+
+metrics-server:
+  enabled: false
+
+rbac:
+  create: true
+  clusterRoleMetrics: true
+  clusterReadOnlyRole: true

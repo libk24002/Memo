@@ -1,0 +1,23 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: self-signed-cluster-issuer
+spec:
+  acme:
+    email: austenconti@163.com
+    privateKeySecretRef:
+      name: self-signed-cluster-issuer
+    server: https://acme-v02.api.letsencrypt.org/directory
+    solvers:
+      - dns01:
+          webhook:
+            config:
+              accessTokenSecretRef:
+                key: access-token
+                name: alidns-webhook-secrets
+              regionId: cn-beijing
+              secretKeySecretRef:
+                key: secret-key
+                name: alidns-webhook-secrets
+            groupName: test.cnconti.cc
+            solverName: alidns-solver

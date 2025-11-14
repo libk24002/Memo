@@ -16,7 +16,7 @@
 ### 容器与云原生
 * [Docker 命令](/essential/docker/commands.md)
 * [Kubernetes 命令](/kubernetes/commands.md)
-* [Helm 命令](/kubernetes/helm/command.md)
+* [Helm 命令](/kubernetes/knowledge/helm/command.md)
 
 ### 其他工具
 * [zjvis 相关命令](other/zjvis/README.md)

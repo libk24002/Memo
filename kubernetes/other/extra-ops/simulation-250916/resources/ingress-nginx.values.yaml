@@ -1,0 +1,27 @@
+controller:
+  image:
+    registry: registry.k8s.io
+    digest: ""
+  service:
+    enabled: true
+    type: NodePort
+    nodePorts:
+      http: 32080
+      https: 32443
+      tcp:
+        8080: 32808
+  resources:
+    requests:
+      cpu: 200m
+      memory: 512Mi
+  admissionWebhooks:
+    enabled: true
+    patch:
+      enabled: true
+      image:
+        registry: registry.k8s.io
+        digest: ""
+metrics:
+  enabled: false
+defaultBackend:
+  enabled: false
