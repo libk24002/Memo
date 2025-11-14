@@ -19,8 +19,8 @@
 
 ### ☁️ 云原生
 
-* [DevOps](cloud-native/devops/README.md)
-* [Kubernetes](cloud-native/kubernetes/README.md)
+* [DevOps](devops/README.md)
+* [Kubernetes](kubernetes/README.md)
 
 ### 🔗 项目链接
 
